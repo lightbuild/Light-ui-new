@@ -4,9 +4,16 @@
 
 <script setup lang="ts">
   import {provide, ref} from 'vue';
+  import {router} from './router/router.ts'
+  
   const width = document.documentElement.clientWidth;
   const meneVisible = ref(width> 500);
   provide('menuVisible', meneVisible);
+  router.afterEach(() =>{
+      if (width < 500) {
+        meneVisible.value = false;
+      }
+  })
 </script>
 <style>
 #app {
