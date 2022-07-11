@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Topnav/>
+  <div class="layout">
+    <Topnav class="nav"/>
     <div class="content">
       <aside v-if="menuVisible">
         <h2>组件列表</h2>
@@ -35,34 +35,60 @@
 </template>
 
 <script setup lang="ts">
-  import Topnav from "../components/Topnav.vue"
+  import Topnav from '../components/Topnav.vue';
   import {inject, Ref} from 'vue';
   
-  const menuVisible = inject<Ref<boolean>>('menuVisible')
+  const menuVisible = inject<Ref<boolean>>('menuVisible');
 </script>
 
 <style lang="scss" scoped>
-  aside {
-    background: lightblue;
-    width: 150px;
-    padding:16px;
-    border: 1px solid black;
+  .layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+    > .nav {
+      flex-shrink: 0;
+    }
+    
+    > .content {
+      flex-grow: 1;
+      @media (max-width: 500px) {
+        padding-left: 0;
+      }
+    }
+  }
   
-    > h2 {
-      margin-bottom: 4px;
-    }
-    > ol {
-      > li {
-        padding: 4px 0;
+  .content {
+    display: flex;
+    
+    > aside {
+      flex-shrink: 0;
+      background: lightblue;
+      width: 150px;
+      padding: 16px;
+      
+      > h2 {
+        margin-bottom: 4px;
+      }
+      
+      > ol {
+        > li {
+          padding: 4px 0;
+        }
       }
     }
-    @media(max-width: 500px) {
-      aside{
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding-top: 70px;
-      }
+    
+    > main {
+      flex-grow: 1;
+      padding: 16px;
+      background: lightgreen;
+      overflow: auto;
     }
+  }
+  
+  aside {
+    
+  
   }
 </style>
