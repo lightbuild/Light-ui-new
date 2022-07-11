@@ -37,7 +37,6 @@
   import {inject, Ref} from 'vue';
   
   const menuVisible = inject<Ref<boolean>>('menuVisible')
-  console.log(menuVisible);
 </script>
 
 <style lang="scss" scoped>
