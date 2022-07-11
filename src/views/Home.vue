@@ -1,17 +1,24 @@
 <template>
   <div>
-    <p>Home页面</p>
+    <div class="topnav">
+      <div class="logo"></div>
+      <div class="menu"></div>
+    </div>
+    <div class="banner">
+      <h1>Light UI for Vue3</h1>
+      <h2> 没有错，我就是在重复造轮子</h2>
+      <p class="actions">
+        <a href="">GitHub</a>
+        <a href="">开始</a>
+      </p>
+    </div>
   </div>
-  <vueIcon/>
-  <tsIcon/>
-  <lightIcon/>
-  <hello-world/>
 </template>
 
 <script setup lang="ts">
-  import vueIcon from '../assets/svg/Vue.svg'
-  import tsIcon from '../assets/svg/typescript.svg'
-  import lightIcon from '../assets/svg/lights.svg'
+  import VueIcon from '../assets/svg/Vue.svg'
+  import TsIcon from '../assets/svg/typescript.svg'
+  import LightIcon from '../assets/svg/lights.svg'
   import HelloWorld from '../markdown/my.md'
 </script>
 
