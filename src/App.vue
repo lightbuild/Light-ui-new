@@ -1,10 +1,12 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <router-view/>
 </template>
 
+<script setup lang="ts">
+  import {provide, ref} from 'vue';
+  const meneVisible = ref(false);
+  provide('menuVisible', meneVisible);
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
