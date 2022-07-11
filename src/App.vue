@@ -4,7 +4,8 @@
 
 <script setup lang="ts">
   import {provide, ref} from 'vue';
-  const meneVisible = ref(false);
+  const width = document.documentElement.clientWidth;
+  const meneVisible = ref(width> 500);
   provide('menuVisible', meneVisible);
 </script>
 <style>
