@@ -1,8 +1,13 @@
 <template>
   <div>
     <div class="topnav">
-      <div class="logo"></div>
-      <div class="menu"></div>
+      <div class="logo">
+        LOGO
+      </div>
+      <ul class="menu">
+        <li>菜单1</li>
+        <li>菜单2</li>
+      </ul>
     </div>
     <div class="banner">
       <h1>Light UI for Vue3</h1>
@@ -16,12 +21,25 @@
 </template>
 
 <script setup lang="ts">
-  import VueIcon from '../assets/svg/Vue.svg'
-  import TsIcon from '../assets/svg/typescript.svg'
-  import LightIcon from '../assets/svg/lights.svg'
-  import HelloWorld from '../markdown/my.md'
+
 </script>
 
 <style lang="scss" scoped>
-
+  .topnav {
+    background: pink;
+    display: flex;
+    padding: 16px;
+    > .logo {
+      max-width: 6em;
+      margin-right: auto;
+    }
+    > .menu {
+      display: flex;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      > li {
+        margin: 0 1em;
+      }
+    }
+  }
 </style>

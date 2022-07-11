@@ -2,12 +2,6 @@
 </script>
 
 <template>
-  <div>导航栏|
-    <router-link to="/">Light</router-link>
-    |
-    <router-link to="/doc">Light2</router-link>
-  </div>
-  <hr/>
   <router-view/>
 </template>
 
@@ -18,7 +12,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .icon {
   width: 1em; height: 1em;
