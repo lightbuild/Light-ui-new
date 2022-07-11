@@ -1,19 +1,15 @@
 <template>
-  <div>
-    <Topnav/>
-    <div class="banner">
-      <h1>Light UI for Vue3</h1>
-      <h2> 没有错，我就是在重复造轮子</h2>
-      <p class="actions">
-        <a href="">GitHub</a>
-        <a href="">开始</a>
-      </p>
-    </div>
+  <div class="topnav">
+    <div class="logo">LOGO</div>
+    <ul class="menu">
+      <li>菜单1</li>
+      <li>菜单2</li>
+    </ul>
   </div>
 </template>
 
 <script setup lang="ts">
-import Topnav from "../components/Topnav.vue"
+
 </script>
 
 <style lang="scss" scoped>
