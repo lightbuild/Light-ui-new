@@ -1,9 +1,10 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+      <Icons class="logo" svg-name="geo.svg"/>
+      <Icons svg-name="github.svg"/>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>文档</li>
+      <li>组件</li>
     </ul>
     <span class="toggleAside" @click="toggleMenu">Menu</span>
   </div>
@@ -11,25 +12,25 @@
 
 <script setup lang="ts">
   import {inject, Ref} from 'vue';
+  import Icons from "./helper/Icons.vue"
 
   let menuVisible = inject<Ref<boolean>>('menuVisible');
   const toggleMenu = ()=>{
-    menuVisible.value = !menuVisible.value;
+    menuVisible!.value = !menuVisible!.value;
   }
   
 </script>
 
 <style lang="scss" scoped>
   .topnav {
-    background: pink;
     display: flex;
     padding: 16px;
     position: relative;
-    z-index: 10;
     justify-content: center;
     align-items: center;
     > .logo {
-      max-width: 6em;
+      width:2em;
+      height: 2em;
       margin-right: auto;
     }
     > .menu {
