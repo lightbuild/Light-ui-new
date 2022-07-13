@@ -1,10 +1,9 @@
 <template>
-  <div>
-    我是Switch组件
-  </div>
+  <Switch/>
 </template>
 
 <script setup lang="ts">
+  import Switch from '../lib/Switch.vue'
 </script>
 
 <style lang="scss" scoped>
