@@ -13,12 +13,15 @@
       </template>
     </Dialog>
   </div>
+  <h1>示例2</h1>
+  <Button @click="showDialog">show</Button>
 </template>
 
 <script setup lang="ts">
   import Dialog from '../lib/Dialog.vue';
   import Button from '../lib/Button.vue';
-  import {ref} from 'vue';
+  import {openDialog} from '../lib/openDialog'
+  import {ref,h} from 'vue';
   
   const visible = ref(false);
   
@@ -30,7 +33,18 @@
   };
   const cancel = () => {
   };
-
+  const showDialog = () => {
+    openDialog({
+      title: h('strong', {}, '标题'),
+      content: '你好',
+      ok() {
+        console.log('ok')
+      },
+      cancel() {
+        console.log('cancel')
+      }
+    })
+  }
 </script>
 
 <style lang="scss" scoped>

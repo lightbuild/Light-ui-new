@@ -53,7 +53,7 @@
     }
   };
   const cancel = () => {
-    emit('cancel');
+    props.cancel?.();
     close();
   };
   const onClickOverlay = () => {
