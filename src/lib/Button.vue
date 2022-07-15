@@ -40,11 +40,6 @@
     };
   });
 </script>
-<script lang="ts">
-  export default {
-    inheritAttrs: false,
-  };
-</script>
 
 <style lang="scss">
   $h: 32px;
