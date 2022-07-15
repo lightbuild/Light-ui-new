@@ -1,16 +1,16 @@
 <template>
-  <div :size="xxx">
-    <button v-bind="rest">
+    <button class="light-button" :class="{[`theme-${theme}`]:theme}">
       <slot/>
     </button>
-  </div>
 </template>
 
 <script setup lang="ts">
-  import {useAttrs} from 'vue';
-  
-  const attrs = useAttrs();
-  const {size, ...rest} = attrs;
+  defineProps({
+    theme:{
+      type:String,
+      default:'button'
+    }
+  })
 </script>
 <script lang="ts">
   export default {
