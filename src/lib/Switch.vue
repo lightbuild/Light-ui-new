@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" :class="{checked:value}"><span></span></button>
+  <button class="light-switch" @click="toggle" :class="{'light-checked':value}"><span></span></button>
 </template>
 
 <script setup lang="ts">
@@ -16,12 +16,12 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @use "sass:math";
   
   $h: 22px;
   $h2: $h - 4px;
-  button {
+  .light-switch{
     height: $h;
     width: $h*2;
     border: none;
@@ -40,7 +40,7 @@
       transition: all 250ms;
     }
   
-    &.checked {
+    &.light-checked {
       background: #1890ff;
     
       > span {
@@ -58,7 +58,7 @@
       }
     }
   
-    &.checked:active {
+    &.light-checked:active {
       > span {
         width: $h2 + 4px;
         margin-left: -4px;

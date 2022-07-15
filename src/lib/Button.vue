@@ -1,5 +1,5 @@
 <template>
-  <button class="light-button" :class="{[`theme-${theme}`]:theme}">
+  <button class="light-button" :class="{[`light-theme-${theme}`]:theme}">
     <slot/>
   </button>
 </template>
@@ -18,7 +18,7 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   $h: 32px;
   $border-color: #d9d9d9;
   $color: #333;
@@ -35,12 +35,11 @@
     white-space: nowrap;
     background: white;
     color: $color;
-    border: 1px solid $border-color;
+    border: 3px solid $border-color;
     border-radius: $radius;
     box-shadow: 0 1px 0 fade-out(black, 0.95);
     
     & + & {
-      border: 1px solid black;
       margin-left: 10px;
     }
     
