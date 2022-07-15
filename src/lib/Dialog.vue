@@ -3,12 +3,12 @@
     <div class="light-dialog-overlay" @click="onClickOverlay"></div>
     <div class="light-dialog-wrapper">
       <div class="light-dialog">
-        <header>标题
+        <header>
+          <slot name="title"/>
           <span @click="close" class="light-dialog-close"></span>
         </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="content"/>
         </main>
         <footer>
           <Button @click="ok" level="main">OK</Button>

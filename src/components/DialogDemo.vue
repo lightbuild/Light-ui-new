@@ -2,7 +2,15 @@
   <div>Dialog 示例</div>
   <h1>示例1</h1>
   <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="visible" :close-on-click-overlay="false" :ok="ok" :cancel="cancel"></Dialog>
+  <Dialog v-model:visible="visible" :close-on-click-overlay="false" :ok="ok" :cancel="cancel">
+    <template v-slot:title>
+      <strong>标题</strong>
+    </template>
+    <template v-slot:content>
+      <strong>第一行内容</strong>
+      <div>第二行内容</div>
+    </template>
+  </Dialog>
 </template>
 
 <script setup lang="ts">
@@ -16,11 +24,9 @@
     visible.value = !visible.value;
   };
   const ok = () => {
-    console.log('ok');
     return false;
   };
   const cancel = () => {
-    console.log('cancel');
   };
 
 </script>
