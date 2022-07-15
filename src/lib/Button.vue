@@ -1,5 +1,5 @@
 <template>
-  <button class="light-button" :class="classes">
+  <button class="light-button" :class="classes" :disabled="disabled">
     <slot/>
   </button>
 </template>
@@ -19,6 +19,10 @@
     level:{
       type:String,
       default: 'normal'
+    },
+    disabled:{
+      type:Boolean,
+      default: false,
     }
   });
   
@@ -44,6 +48,7 @@
   $blue: #40a9ff;
   $radius: 4px;
   $red: red;
+  $grey:grey;
   .light-button {
     box-sizing: border-box;
     height: $h;
@@ -155,6 +160,21 @@
         &:focus {
           color: darken($red, 10%);
         }
+      }
+    }
+    &.light-theme-button {
+      &[disabled] {
+        cursor: not-allowed;
+        color: $grey;
+        &:hover {
+          border-color: $grey;
+        }
+      }
+    }
+    &.light-theme-link, &.light-theme-text {
+      &[disabled] {
+        cursor: not-allowed;
+        color: $grey;
       }
     }
   }
