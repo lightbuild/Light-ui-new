@@ -1,16 +1,18 @@
 <template>
   <div>Dialog 示例</div>
   <h1>示例1</h1>
-  <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="visible" :close-on-click-overlay="false" :ok="ok" :cancel="cancel">
-    <template v-slot:title>
-      <strong>标题</strong>
-    </template>
-    <template v-slot:content>
-      <strong>第一行内容</strong>
-      <div>第二行内容</div>
-    </template>
-  </Dialog>
+  <div>
+    <Button @click="toggle">toggle</Button>
+    <Dialog v-model:visible="visible" :close-on-click-overlay="false" :ok="ok" :cancel="cancel">
+      <template v-slot:title>
+        <strong>标题</strong>
+      </template>
+      <template v-slot:content>
+        <strong>第一行内容</strong>
+        <div>第二行内容</div>
+      </template>
+    </Dialog>
+  </div>
 </template>
 
 <script setup lang="ts">
