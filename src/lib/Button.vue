@@ -1,15 +1,29 @@
 <template>
-  <button class="light-button" :class="{[`light-theme-${theme}`]:theme}">
+  <button class="light-button" :class="classes">
     <slot/>
   </button>
 </template>
 
 <script setup lang="ts">
-  defineProps({
+  import {computed} from 'vue';
+  
+  const props = defineProps({
     theme: {
       type: String,
       default: 'button'
+    },
+    size: {
+      type: String,
+      default: 'normal'
     }
+  });
+  
+  const {theme, size} = props;
+  const classes = computed(() => {
+    return {
+      [`light-theme-${theme}`]: theme,
+      [`light-size-${size}`]: size,
+    };
   });
 </script>
 <script lang="ts">
@@ -35,7 +49,7 @@
     white-space: nowrap;
     background: white;
     color: $color;
-    border: 3px solid $border-color;
+    border: 1px solid $border-color;
     border-radius: $radius;
     box-shadow: 0 1px 0 fade-out(black, 0.95);
     
@@ -55,6 +69,38 @@
     
     &::-moz-focus-inner {
       border: 0;
+    }
+    
+    &.light-theme-link {
+      border-color: transparent;
+      box-shadow: none;
+      color: $blue;
+      
+      &:hover, &:focus {
+        color: lighten($blue, 10%);
+      }
+    }
+    
+    &.light-theme-text {
+      border-color: transparent;
+      box-shadow: none;
+      color: inherit;
+      
+      &:hover, &:focus {
+        background: darken(white, 5%);;
+      }
+    }
+    
+    &.light-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px
+    }
+    
+    &.light-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
     }
   }
 </style>
